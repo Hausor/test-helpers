@@ -1,5 +1,8 @@
-Test helpers for testing meteor packages usning mocha
+Test helpers for testing meteor packages using mocha
 ============================================
+
+If you don't know how to test your packages using mocha - read [testing-meteor-packages-with-mocha](https://blog.respond.ly/testing-meteor-packages-with-mocha/) and then use this [meteor-mocha-web](https://github.com/mad-eye/meteor-mocha-web/tree/packageTest)
+
 
 How to use it
 --------------------------------------------
@@ -19,15 +22,17 @@ This simple package provides you with 2 helpers
 
 As a name suggests - it renders template by given name.
 
-parameters:
+#### parameters:
 
 - **name**: template name
 - **data**: template context data
-- **done**: test done callback function
+- **done**: done callback
 
-returns: jquery object with rendered template.
+#### returns: 
 
-How to use it (coffeescript): 
+jquery object with rendered template.
+
+#### How to use it (coffeescript): 
 
 ```coffeescript
 describe "some awesome template", ->
@@ -38,23 +43,25 @@ describe "some awesome template", ->
     expect(@div.text()).to.contain "Awesome"
 ```
 
-In case of no context data just ommit it: renderTemplate(name, done)
+In case of no context data just ommit it: `renderTemplate(name, done)`
 
 ### stubMeteorMethod(methodName, error, success)
 
-Since you cannot simply stub meteor method with sinon.stub (because velocity uses it to do her things) stubMeteorMethod simply wraps Meteor.call it and filter out only particular "method".
+Since you cannot simply stub meteor method with sinon.stub (because velocity uses it to do her things) `stubMeteorMethod` simply wraps Meteor.call it and filter out only particular method.
 
-parameters:
+#### parameters:
 
 - **methodName**: name of the stubbed method
 - **error**: error parameter of asyncCallback function
 - **success**: success parameter of asyncCallback function
 
-returns: sinon.js spy
+#### returns: 
 
-restore: to restore method to its original state call: `restoreMethodStubs()` or sinon's stubs.restoreAll()
+[sinon.js spy](http://sinonjs.org/docs/#spies)
 
-How to use it (coffeescript):
+to restore method to its original state call: `restoreMethodStubs()` or sinon's `stubs.restoreAll()`
+
+#### How to use it (coffeescript):
 
 Let say you would like to stub following method call:
 
@@ -83,7 +90,9 @@ describe "some method interaction", ->
 
 ```
 
-To see tests just run:
+## Tests
+
+To run tests:
 
     meteor test-packages --driver-package respondly:test-reporter hausor:test-helpers
 

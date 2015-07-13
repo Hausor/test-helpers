@@ -1,6 +1,6 @@
 _original = Meteor.call
 
-stubMeteorMethod = (methodName, error, ret) ->
+stubMeteorMethod = (methodName, error=null, success=null) ->
   s = Meteor.call
   spy = sinon.spy()
   Meteor.call = () =>
@@ -8,7 +8,7 @@ stubMeteorMethod = (methodName, error, ret) ->
       lastArg = _.last(arguments)
       spy()
       if typeof lastArg == 'function'
-        lastArg(error, ret)
+        lastArg(error, success)
     else
       s.apply(@, arguments)
   return spy
