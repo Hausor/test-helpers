@@ -9,8 +9,8 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
   
-  api.use("coffeescript")
-  api.use("practicalmeteor:sinon")
+  api.use("coffeescript@1.0.6")
+  api.use("practicalmeteor:sinon@1.14.1_2")
 
   api.addFiles("export.js");
   api.addFiles("both/stub_meteor_call.coffee");
@@ -23,8 +23,8 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function(api) {
-  api.use(['mike:mocha-package@0.5.7', 'practicalmeteor:chai', 'practicalmeteor:sinon']);
-  api.use('coffeescript');
+  api.use(['mike:mocha-package@0.5.7', 'practicalmeteor:chai', 'practicalmeteor:sinon@1.14.1_2']);
+  api.use('coffeescript@1.0.6');
   api.use('templating@1.0.0');
   api.use('blaze@2.0.0');
   api.use('accounts-password');
