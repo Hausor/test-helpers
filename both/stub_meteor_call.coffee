@@ -1,6 +1,6 @@
 _original = Meteor.call
 
-@stubMeteorMethod = (methodName, error, ret) ->
+stubMeteorMethod = (methodName, error, ret) ->
   s = Meteor.call
   spy = sinon.spy()
   Meteor.call = () =>
@@ -13,5 +13,10 @@ _original = Meteor.call
       s.apply(@, arguments)
   return spy
 
-@restoreMethodStubs = () ->
+restoreMethodStubs = () ->
   Meteor.call = _original
+
+_restoreAll = stubs.restoreAll
+stubs.restoreAll = () ->
+  _restoreAll.apply(this)
+  restoreMethodStubs()
