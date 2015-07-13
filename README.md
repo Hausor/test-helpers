@@ -1,8 +1,14 @@
 Test helpers for testing meteor packages using mocha
 ============================================
 
+
+Before you start
+--------------------------------------------
+
 If you don't know how to test your packages using mocha - read [testing-meteor-packages-with-mocha](https://blog.respond.ly/testing-meteor-packages-with-mocha/) and then use this [meteor-mocha-web](https://github.com/mad-eye/meteor-mocha-web/tree/packageTest)
 
+
+This package depends on sinonjs: standalone test spies, stubs and mocks for JavaScript. To be exact on this meteorjs package: [practicalmeteor:sinon](https://atmospherejs.com/practicalmeteor/sinon)
 
 How to use it
 --------------------------------------------
