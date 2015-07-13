@@ -2,7 +2,7 @@ Package.describe({
   name: 'hausor:test-helpers',
   version: '0.0.1',
   summary: 'Simple test helpers for meteor',
-  git: '',
+  git: 'https://github.com/Hausor/test-helpers',
   documentation: 'README.md'
 });
 
