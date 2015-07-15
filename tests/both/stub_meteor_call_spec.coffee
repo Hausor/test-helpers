@@ -21,7 +21,7 @@ describe 'restoreMethodStubs', ->
     expect(() -> Meteor.call(methodName)).to.throw("404") if Meteor.isServer
 
   it 'doesnt change how original stubs.restoreAll works', ->
-    expect(Meteor.userId()).to.equal null
+    expect(Meteor.userId()).not.to.equal "caller"
     stubs.create("normalUserIdStub", Meteor, "userId").returns "caller"
     expect(Meteor.userId()).to.equal "caller"
     stubs.restoreAll()

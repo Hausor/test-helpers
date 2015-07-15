@@ -1,6 +1,6 @@
 Package.describe({
   name: 'hausor:test-helpers',
-  version: '0.0.1',
+  version: '0.0.3',
   summary: 'Simple test helpers for meteor',
   git: 'https://github.com/Hausor/test-helpers',
   documentation: 'README.md'
