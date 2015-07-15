@@ -25,6 +25,6 @@ describe 'restoreMethodStubs', ->
     stubs.create("normalUserIdStub", Meteor, "userId").returns "caller"
     expect(Meteor.userId()).to.equal "caller"
     stubs.restoreAll()
-    expect(Meteor.userId()).to.equal null
+    expect(Meteor.userId()).not.to.equal "caller"
     
     
